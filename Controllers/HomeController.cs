@@ -68,7 +68,7 @@ public class HomeController : Controller
         var eventItem = await _eventRepository.GetEvent(id);
         if (eventItem == null)
         {
-            return NotFound(); // Nebo nějaké informativní chybové hlášení
+            return NotFound(); 
         }
             
         await _eventRepository.DeleteEvent(eventItem);
