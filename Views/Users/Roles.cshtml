@@ -1,0 +1,28 @@
+@model List<Microsoft.AspNetCore.Identity.IdentityRole>
+
+@{
+    ViewData["Title"] = "Roles";
+}
+
+<a asp-action="RoleCreate" asp-controller="Users" class="btn btn-primary">Vytvořit roli</a>
+
+<h1>Seznam rolí</h1>
+<table class="table">
+    <thead>
+    <tr>
+        <th>Role ID</th>
+        <th>Název role</th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var role in Model)
+    {
+    <tr>
+        <td>@role.Id</td>
+        <td>@role.Name</td>
+    </tr>
+    }
+    </tbody>
+</table>
+
+

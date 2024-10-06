@@ -1,0 +1,50 @@
+@using Microsoft.AspNetCore.Mvc.TagHelpers
+@model List<Event>
+
+@{
+    ViewData["Title"] = "Admin - Events";
+
+}
+
+<h1>Events</h1>
+
+<a asp-action="EventCreate" asp-controller="Events" class="btn btn-primary">Vytvořit event</a>
+
+
+
+<table class="table">
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>Location</th>
+        <th>Date</th>
+        <th>Start Time</th>
+        <th>End Time</th>
+        <th>Price</th>
+        <th>Description</th>
+        <th>Address</th>
+        <th>Max Capacity</th>
+        <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var item in Model)
+    {
+        <tr>
+
+            <td>@item.Name</td>
+            <td>@item.Location</td>
+            <td>@item.Date</td>
+            <td>@item.StartTime</td>
+            <td>@item.EndTime</td>
+            <td>@item.Price</td>
+            <td>@item.Description</td>
+            <td>@item.Address</td>
+            <td>@item.MaxCapacity</td>
+            <td><a asp-action="EventDetails" asp-controller="Events" asp-route-id="@item.Id" class="btn-primary btn">Detail</a></td>
+            
+        </tr>
+        
+    }
+    </tbody>
+</table>

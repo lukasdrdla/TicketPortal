@@ -124,3 +124,10 @@
 /Users/lukasdrdla/RiderProjects/TicketPortal/TicketPortal/bin/Debug/net8.0/tr/Microsoft.CodeAnalysis.Workspaces.resources.dll
 /Users/lukasdrdla/RiderProjects/TicketPortal/TicketPortal/bin/Debug/net8.0/zh-Hans/Microsoft.CodeAnalysis.Workspaces.resources.dll
 /Users/lukasdrdla/RiderProjects/TicketPortal/TicketPortal/bin/Debug/net8.0/zh-Hant/Microsoft.CodeAnalysis.Workspaces.resources.dll
+/Users/lukasdrdla/RiderProjects/TicketPortal/TicketPortal/obj/Debug/net8.0/TicketPortal.sourcelink.json
+/Users/lukasdrdla/RiderProjects/TicketPortal/TicketPortal/bin/Debug/net8.0/TicketPortal.Domain.dll
+/Users/lukasdrdla/RiderProjects/TicketPortal/TicketPortal/bin/Debug/net8.0/TicketPortal.Domain.pdb
+/Users/lukasdrdla/RiderProjects/TicketPortal/TicketPortal/bin/Debug/net8.0/TicketPortal.Application.dll
+/Users/lukasdrdla/RiderProjects/TicketPortal/TicketPortal/bin/Debug/net8.0/TicketPortal.Infrastructure.dll
+/Users/lukasdrdla/RiderProjects/TicketPortal/TicketPortal/bin/Debug/net8.0/TicketPortal.Application.pdb
+/Users/lukasdrdla/RiderProjects/TicketPortal/TicketPortal/bin/Debug/net8.0/TicketPortal.Infrastructure.pdb

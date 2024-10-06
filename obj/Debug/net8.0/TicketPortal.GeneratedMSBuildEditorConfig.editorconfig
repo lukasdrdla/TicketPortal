@@ -18,10 +18,6 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = /Users/lukasdrdla/RiderProjects/TicketPortal/TicketPortal
 build_property._RazorSourceGeneratorDebug = 
 
-[/Users/lukasdrdla/RiderProjects/TicketPortal/TicketPortal/Views/Account/AddRole.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWNjb3VudC9BZGRSb2xlLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
 [/Users/lukasdrdla/RiderProjects/TicketPortal/TicketPortal/Views/Account/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWNjb3VudC9Mb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -30,20 +26,44 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWNjb3VudC9SZWdpc3Rlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/lukasdrdla/RiderProjects/TicketPortal/TicketPortal/Views/Home/Create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9DcmVhdGUuY3NodG1s
+[/Users/lukasdrdla/RiderProjects/TicketPortal/TicketPortal/Views/Account/UserProfile.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWNjb3VudC9Vc2VyUHJvZmlsZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/lukasdrdla/RiderProjects/TicketPortal/TicketPortal/Views/Home/Event.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9FdmVudC5jc2h0bWw=
+[/Users/lukasdrdla/RiderProjects/TicketPortal/TicketPortal/Views/Events/EventCreate.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRXZlbnRzL0V2ZW50Q3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/lukasdrdla/RiderProjects/TicketPortal/TicketPortal/Views/Events/EventDetails.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRXZlbnRzL0V2ZW50RGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/lukasdrdla/RiderProjects/TicketPortal/TicketPortal/Views/Events/EventEdit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRXZlbnRzL0V2ZW50RWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/lukasdrdla/RiderProjects/TicketPortal/TicketPortal/Views/Events/Events.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRXZlbnRzL0V2ZW50cy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/lukasdrdla/RiderProjects/TicketPortal/TicketPortal/Views/Home/Cart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9DYXJ0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/lukasdrdla/RiderProjects/TicketPortal/TicketPortal/Views/Home/ConfirmOrder.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9Db25maXJtT3JkZXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/lukasdrdla/RiderProjects/TicketPortal/TicketPortal/Views/Home/EventDetail.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9FdmVudERldGFpbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [/Users/lukasdrdla/RiderProjects/TicketPortal/TicketPortal/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9JbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/lukasdrdla/RiderProjects/TicketPortal/TicketPortal/Views/Home/Privacy.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9Qcml2YWN5LmNzaHRtbA==
+[/Users/lukasdrdla/RiderProjects/TicketPortal/TicketPortal/Views/Shared/CartSummary.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL0NhcnRTdW1tYXJ5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [/Users/lukasdrdla/RiderProjects/TicketPortal/TicketPortal/Views/Shared/Error.cshtml]
@@ -52,6 +72,34 @@ build_metadata.AdditionalFiles.CssScope =
 
 [/Users/lukasdrdla/RiderProjects/TicketPortal/TicketPortal/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/lukasdrdla/RiderProjects/TicketPortal/TicketPortal/Views/ShoppingCart/ViewCart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hvcHBpbmdDYXJ0L1ZpZXdDYXJ0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/lukasdrdla/RiderProjects/TicketPortal/TicketPortal/Views/Tickets/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVGlja2V0cy9JbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/lukasdrdla/RiderProjects/TicketPortal/TicketPortal/Views/Users/RoleCreate.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVXNlcnMvUm9sZUNyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/lukasdrdla/RiderProjects/TicketPortal/TicketPortal/Views/Users/Roles.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVXNlcnMvUm9sZXMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/lukasdrdla/RiderProjects/TicketPortal/TicketPortal/Views/Users/UserDetails.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVXNlcnMvVXNlckRldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/lukasdrdla/RiderProjects/TicketPortal/TicketPortal/Views/Users/UserEdit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVXNlcnMvVXNlckVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/lukasdrdla/RiderProjects/TicketPortal/TicketPortal/Views/Users/Users.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVXNlcnMvVXNlcnMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [/Users/lukasdrdla/RiderProjects/TicketPortal/TicketPortal/Views/_ViewImports.cshtml]

@@ -1,0 +1,38 @@
+@model TicketPortal.ViewModels.ShoppingCartViewModel
+
+@{
+    ViewData["Title"] = "View Cart";
+}
+
+<div class="container my-5">
+    <h1 class="display-4 font-weight-bold">Shopping Cart</h1>
+    <div class="row">
+        <div class="col-md-8">
+            <table class="table">
+                <thead>
+                <tr>
+                    <th>Price per ticket</th>
+                    <th>Quantity</th>
+                
+                </tr>
+                </thead>
+                <tbody>
+                @foreach (var item in Model.ShoppingCartItems)
+                {
+                    <tr>
+                        <td>@item.Ticket.Price.ToString("C")</td>
+                        <td>@item.Quantity</td>
+                
+                        
+             
+                    </tr>
+                }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<p>Total: @Model.ShoppingCartTotal</p>
+
+

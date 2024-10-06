@@ -12,7 +12,10 @@
           "Microsoft.EntityFrameworkCore": "8.0.8",
           "Microsoft.EntityFrameworkCore.Design": "8.0.8",
           "Microsoft.EntityFrameworkCore.Tools": "8.0.8",
-          "MySql.EntityFrameworkCore": "8.0.5"
+          "MySql.EntityFrameworkCore": "8.0.5",
+          "TicketPortal.Application": "1.0.0",
+          "TicketPortal.Domain": "1.0.0",
+          "TicketPortal.Infrastructure": "1.0.0"
         },
         "runtime": {
           "TicketPortal.dll": {}
@@ -748,6 +751,41 @@
             "fileVersion": "0.8.0.0"
           }
         }
+      },
+      "TicketPortal.Application/1.0.0": {
+        "dependencies": {
+          "TicketPortal.Domain": "1.0.0",
+          "TicketPortal.Infrastructure": "1.0.0"
+        },
+        "runtime": {
+          "TicketPortal.Application.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "TicketPortal.Domain/1.0.0": {
+        "dependencies": {
+          "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "8.0.8"
+        },
+        "runtime": {
+          "TicketPortal.Domain.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "TicketPortal.Infrastructure/1.0.0": {
+        "dependencies": {
+          "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "8.0.8",
+          "TicketPortal.Domain": "1.0.0"
+        },
+        "runtime": {
+          "TicketPortal.Infrastructure.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
       }
     }
   },
@@ -1239,6 +1277,21 @@
       "sha512": "sha512-Z62eNBIu8E8YtbqlMy57tK3dV1+m2b9NhPeaYovB5exmLKvrGCqOhJTzrEUH5VyUWU6vwX3c1XHJGhW5HVs8dA==",
       "path": "zstdsharp.port/0.8.0",
       "hashPath": "zstdsharp.port.0.8.0.nupkg.sha512"
+    },
+    "TicketPortal.Application/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "TicketPortal.Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "TicketPortal.Infrastructure/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     }
   }
 }

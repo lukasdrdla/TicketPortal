@@ -1,0 +1,40 @@
+@model TicketPortal.ViewModels.EditUserViewModel
+
+@{
+ViewData["Title"] = "Editace uživatele";
+}
+
+<h2>Editace uživatele</h2>
+
+<form asp-action="UserEdit" method="post">
+    <div class="form-group">
+        <label asp-for="FirstName" class="control-label"></label>
+        <input asp-for="FirstName" class="form-control" />
+        <span asp-validation-for="FirstName" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="LastName" class="control-label"></label>
+        <input asp-for="LastName" class="form-control" />
+        <span asp-validation-for="LastName" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Email" class="control-label"></label>
+        <input asp-for="Email" class="form-control" />
+        <span asp-validation-for="Email" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Role" class="control-label"></label>
+        <select asp-for="Role" asp-items="ViewBag.Roles" class="form-control"></select>
+        <span asp-validation-for="Role" class="text-danger"></span>
+    </div>
+
+    <input type="hidden" asp-for="Id" />
+
+    <div class="form-group mt-3">
+        <button type="submit" class="btn btn-primary">Uložit změny</button>
+        <a asp-action="Users" class="btn btn-secondary">Zrušit</a>
+    </div>
+</form>

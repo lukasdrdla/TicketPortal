@@ -1,9 +1,10 @@
 using System.Diagnostics;
+using System.Security.Claims;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-using TicketPortal.Interfaces;
-using TicketPortal.Models;
+using TicketPortal.Application.Interfaces;
+using TicketPortal.Domain.Entities;
+using TicketPortal.ViewModels;
 
 namespace TicketPortal.Controllers;
 
@@ -11,72 +12,52 @@ public class HomeController : Controller
 {
     private readonly ILogger<HomeController> _logger;
     
-    private readonly UserManager<AppUser> _userManager;
     private readonly IEventRepository _eventRepository;
-
-    public HomeController(ILogger<HomeController> logger, UserManager<AppUser> userManager, IEventRepository eventRepository)
+    private readonly ITicketRepository _ticketRepository;
+    
+    public HomeController(ILogger<HomeController> logger, IEventRepository eventRepository, ITicketRepository ticketRepository)
     {
         _logger = logger;
-        _userManager = userManager;
         _eventRepository = eventRepository;
+        _ticketRepository = ticketRepository;
     }
 
-
     
-
-    public async Task<IActionResult> Index()
+    public async Task<IActionResult> Index(string search)
     {
-        
         var events = await _eventRepository.GetEvents();
+        if (!string.IsNullOrEmpty(search))
+        {
+            events = events.Where(x => x.Name.Contains(search, StringComparison.OrdinalIgnoreCase) || 
+                                       x.Description.Contains(search, StringComparison.OrdinalIgnoreCase)).ToList();
+        }
         return View(events);
     }
     
-    public async Task<IActionResult> Event(int id)
+    public async Task<IActionResult> EventDetail(int id)
     {
         var eventItem = await _eventRepository.GetEvent(id);
-        return View(eventItem);
+        var ticket = await _ticketRepository.GetTicketByEventId(id);
+        
+        var viewModel = new EventDetailViewModel
+        {
+            Event = eventItem,
+            Ticket = ticket
+        };
+        
+        
+        
+        
+        
+        return View(viewModel);
     }
-
-    public IActionResult Privacy()
+    
+    public IActionResult ConfirmOrder()
     {
         return View();
     }
+    
 
-    [Authorize(Roles = "admin")]
-    public IActionResult Create()
-    {
-        return View();
-    }
-    
-    [HttpPost]
-    public async Task<IActionResult> Create(Event eventItem)
-    {
-        if (ModelState.IsValid)
-        {
-            await _eventRepository.AddEvent(eventItem);
-            return RedirectToAction("Index");
-        }
-        return View(eventItem);
-    }
-
-    
-  
-    [HttpPost]
-    [Authorize(Roles = "admin")]
-    public async Task<IActionResult> Delete(int id)
-    {
-        var eventItem = await _eventRepository.GetEvent(id);
-        if (eventItem == null)
-        {
-            return NotFound(); 
-        }
-            
-        await _eventRepository.DeleteEvent(eventItem);
-        return RedirectToAction("Index");
-    }
-    
-    
-    
     
 
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

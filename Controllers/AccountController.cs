@@ -1,6 +1,7 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-using TicketPortal.Models;
+using TicketPortal.Domain.Entities;
 using TicketPortal.ViewModels;
 
 namespace TicketPortal.Controllers;
@@ -17,18 +18,12 @@ public class AccountController : Controller
         _userManager = userManager;
         _roleManager = roleManager;
     }
-
     
-    // GET
-    public IActionResult Index()
-    {
-        return View();
-    }
-
-    public async Task<IActionResult> Register()
+    /**************************************** Register ****************************************/
+    public IActionResult Register()
     {
         RegisterViewModel registerViewModel = new RegisterViewModel();
-        return await Task.FromResult(View(registerViewModel));
+        return View(registerViewModel);
     }
     
     [HttpPost]
@@ -44,24 +39,27 @@ public class AccountController : Controller
                 LastName = registerViewModel.LastName,
                 PhoneNumber = registerViewModel.PhoneNumber
             };
-            IdentityResult result = await _userManager.CreateAsync(user, registerViewModel.Password);
+            var result = await _userManager.CreateAsync(user, registerViewModel.Password);
             if (result.Succeeded)
             {
                 await _signInManager.SignInAsync(user, isPersistent: false);
                 return RedirectToAction("Index", "Home");
             }
-            foreach (IdentityError error in result.Errors)
+            foreach (var error in result.Errors)
             {
                 ModelState.AddModelError("", error.Description);
             }
         }
         return View(registerViewModel);
     }
+    /****************************************************************************************/
     
-    public async Task<IActionResult> Login()
+    
+    /**************************************** Login ****************************************/
+    public IActionResult Login()
     {
         LoginViewModel loginViewModel = new LoginViewModel();
-        return await Task.FromResult(View(loginViewModel));
+        return View(loginViewModel);
     }
     
     [HttpPost]
@@ -69,11 +67,11 @@ public class AccountController : Controller
     {
         if (ModelState.IsValid)
         {
-            AppUser user = await _userManager.FindByEmailAsync(loginViewModel.Email);
+            var user = await _userManager.FindByEmailAsync(loginViewModel.Email);
             if (user != null)
             {
                 await _signInManager.SignOutAsync();
-                Microsoft.AspNetCore.Identity.SignInResult result = await _signInManager.PasswordSignInAsync(user, loginViewModel.Password, false, false);
+                var result = await _signInManager.PasswordSignInAsync(user, loginViewModel.Password, false, false);
                 if (result.Succeeded)
                 {
                     return RedirectToAction("Index", "Home");
@@ -83,35 +81,29 @@ public class AccountController : Controller
         }
         return View(loginViewModel);
     }
+    /****************************************************************************************/
     
+    /**************************************** Logout ****************************************/
     [HttpPost]
     public async Task<IActionResult> Logout()
     {
         await _signInManager.SignOutAsync();
         return RedirectToAction("Index", "Home");
     }
+    /****************************************************************************************/
     
-    
-    
-    [HttpPost]
-    public async Task<IActionResult> AddRole(string roleName)
+    /**************************************** UserProfile ****************************************/
+    [Authorize]
+    public async Task<IActionResult> UserProfile()
     {
-        IdentityResult result = await _roleManager.CreateAsync(new IdentityRole(roleName));
-        if (result.Succeeded)
-        {
-            return RedirectToAction("Index", "Home");
-        }
-        foreach (IdentityError error in result.Errors)
-        {
-            ModelState.AddModelError("", error.Description);
-        }
-        return View();
-        
-    }
-    
-    public async Task<IActionResult> AddRole()
-    {
-        return await Task.FromResult(View());
-    }
+        var currentUser = await _userManager.GetUserAsync(User);
 
+        if (currentUser == null)
+        {
+            Redirect("/Account/Login");
+        }
+        return View(currentUser);
+    }
+    /****************************************************************************************/
+    
 }
